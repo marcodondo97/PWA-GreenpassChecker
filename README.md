@@ -1,159 +1,38 @@
-# Green Pass Checker - React App
+### Introduction
 
-A simple React application for scanning and validating European COVID-19 Green Pass QR codes.
+Green Pass Checker is a React web application that scans and validates European COVID-19 Green Pass QR codes. It is designed to be fast, mobile-friendly, and easily deployable as a Progressive Web App (PWA).
 
-## 🚀 Features
+### Description
 
-- **QR Code Scanner**: Real-time camera-based QR code scanning
-- **PWA Support**: Installable as a native app on mobile devices
-- **Mobile-First Design**: Optimized for mobile devices with Bootstrap 5
-- **Responsive UI**: Beautiful, modern interface
-- **Offline Support**: Works offline with service worker caching
+- QR code scanning powered by `@zxing/library`
+- Modern UI with Bootstrap 5 and Bootstrap Icons
+- React 18 application bootstrapped with Create React App (`react-scripts`)
+- PWA-ready with a web app manifest (`public/manifest.json`)
+- Source code organized under `src/` with components like `QRScanner` and `ResultDisplay`
 
-## 🛠️ Tech Stack
+Local development
 
-- **Frontend**: React 18
-- **Styling**: Bootstrap 5 + Bootstrap Icons
-- **QR Scanner**: @zxing/library
-- **PWA**: Service Worker + Web App Manifest
-- **Deploy**: AWS Amplify
+1. Install dependencies: `npm install`
+2. Start the dev server: `npm start` (opens at http://localhost:3000)
+3. Build for production: `npm run build`
 
-## 📱 PWA Features
+### Deploy
 
-- ✅ Installable on mobile devices
-- ✅ Offline functionality
-- ✅ App-like experience
-- ✅ Native app integration
+Deploy using AWS Amplify Hosting.
 
-## 🚀 Quick Start
+Steps (CI/CD with GitHub)
 
-### Prerequisites
+1. Push your code to the `main` branch on GitHub.
+2. Open the AWS Amplify Console: [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
+3. Select “Host web app”, choose “GitHub”, and authorize access.
+4. Pick the repository `PWA-greenpasschecker` and branch `main`.
+5. Build settings: this repo includes `amplify.yml` which uses Node 20 and runs `npm ci` then `npm run build`.
+6. Artifact output directory: `build`.
+7. Start the deploy. After it completes, you will get a public URL.
 
-- Node.js 16+ 
-- npm or yarn
+Recommended settings
 
-### Installation
+- Add a SPA rewrite rule: redirect all 200s to `/index.html`.
+- Optionally set `NODE_VERSION=20` in Amplify environment variables if you prefer UI config.
 
-1. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-2. **Run development server**
-   ```bash
-   npm start
-   ```
-
-3. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-## 🚀 Deploy to AWS Amplify
-
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Connect to AWS Amplify**
-   - Go to [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
-   - Click "New app" → "Host web app"
-   - Choose "GitHub" as source
-   - Select your repository and branch (main)
-
-3. **Build Settings**
-   - Amplify will auto-detect React
-   - Build command: `npm run build`
-   - Output directory: `build`
-
-## 📱 PWA Installation
-
-### Mobile Devices
-
-1. **iOS (Safari)**
-   - Open the app in Safari
-   - Tap the Share button
-   - Select "Add to Home Screen"
-
-2. **Android (Chrome)**
-   - Open the app in Chrome
-   - Tap the menu (⋮)
-   - Select "Add to Home screen"
-
-### Desktop
-
-- **Chrome/Edge**: Click the install icon in the address bar
-- **Firefox**: Click the install icon in the address bar
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env` file:
-```env
-REACT_APP_NAME=Green Pass Checker
-REACT_APP_VERSION=1.0.0
-```
-
-### PWA Configuration
-
-The PWA is configured in:
-- `public/manifest.json` - App manifest
-- `public/sw.js` - Service worker
-- `public/index.html` - PWA meta tags
-
-## 🧪 Testing
-
-### Manual Testing
-
-1. **QR Code Scanning**
-   - Test with valid Green Pass QR codes (HC1: format)
-   - Test with invalid QR codes
-   - Test camera permissions
-
-2. **PWA Features**
-   - Test offline functionality
-   - Test app installation
-   - Test responsive design
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Camera Not Working**
-   - Check browser permissions
-   - Ensure HTTPS is enabled
-   - Try refreshing the page
-
-2. **PWA Not Installing**
-   - Check if service worker is registered
-   - Ensure manifest.json is accessible
-   - Verify HTTPS connection
-
-3. **Build Errors**
-   - Check Node.js version (16+)
-   - Clear node_modules and reinstall
-   - Check for syntax errors
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📞 Support
-
-- **Issues**: Create an issue on GitHub
-- **Documentation**: Check the README
+Learn more about the service here: [AWS Amplify Hosting](https://aws.amazon.com/amplify/hosting/).
