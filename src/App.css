@@ -1,0 +1,84 @@
+/* App-specific styles */
+
+.App {
+  text-align: center;
+}
+
+/* Custom styles for the app */
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+/* Header styles */
+header {
+  background: linear-gradient(135deg, #198754, #157347) !important;
+}
+
+/* Main content styles */
+main {
+  background-color: #f8f9fa;
+}
+
+/* Footer styles */
+footer {
+  border-top: 1px solid #dee2e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  header .fs-2 {
+    font-size: 1.5rem !important;
+  }
+  
+  header h1 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  header {
+    padding-top: calc(1rem + env(safe-area-inset-top));
+  }
+}
+
+/* Print styles */
+@media print {
+  header,
+  footer,
+  .alert,
+  .btn {
+    display: none !important;
+  }
+  
+  .result-container {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
