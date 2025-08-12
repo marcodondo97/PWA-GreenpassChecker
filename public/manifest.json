@@ -2,13 +2,13 @@
   "short_name": "GP Checker",
   "name": "Green Pass Checker",
   "icons": [
-    {
-      "src": "/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
+    { "src": "/img/greenpasschecker48.png", "sizes": "48x48", "type": "image/png" },
+    { "src": "/img/greenpasschecker96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/img/greenpasschecker144.png", "sizes": "144x144", "type": "image/png" },
+    { "src": "/img/greenpasschecker192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/img/greenpasschecker512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

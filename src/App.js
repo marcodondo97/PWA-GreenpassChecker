@@ -7,6 +7,7 @@ function App() {
   const [currentView, setCurrentView] = useState('scanner');
   const [scanResult, setScanResult] = useState(null);
   const [isPWA, setIsPWA] = useState(false);
+  const [canPromptInstall, setCanPromptInstall] = useState(false);
   const [resetScanner, setResetScanner] = useState(0);
 
   useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault();
       window.deferredPrompt = e;
+      setCanPromptInstall(true);
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
@@ -108,7 +110,7 @@ function App() {
             {isPWA && (
               <div className="badge bg-light text-dark">
                 <i className="bi bi-phone me-1"></i>
-                PWA
+                 PWA
               </div>
             )}
           </div>
@@ -117,18 +119,18 @@ function App() {
 
       <main className="flex-grow-1 py-4">
         <div className="container">
-          {currentView === 'scanner' && (
-            <div className="text-center mb-4">
-              <div className="alert alert-info" role="alert">
-                <i className="bi bi-info-circle me-2"></i>
-                <strong>Instructions:</strong> Point your camera at an EU Green Pass QR code to validate it
+            {currentView === 'scanner' && (
+              <div className="text-center mb-4">
+                <div className="alert alert-info" role="alert">
+                  <i className="bi bi-info-circle me-2"></i>
+                  <strong>Instructions:</strong> Point your camera at an EU Green Pass QR code to validate it
+                </div>
               </div>
-            </div>
           )}
 
           {renderContent()}
 
-          {!isPWA && currentView === 'scanner' && (
+          {!isPWA && currentView === 'scanner' && canPromptInstall && (
             <div className="mt-4">
               <div className="alert alert-success" role="alert">
                 <div className="d-flex align-items-center justify-content-between">
@@ -141,8 +143,10 @@ function App() {
                     onClick={() => {
                       if (window.deferredPrompt) {
                         window.deferredPrompt.prompt();
-                      } else {
-                        alert('To install: Chrome/Edge use the address-bar install icon; Firefox: Menu → Install app; Safari: Share → Add to Home Screen');
+                        window.deferredPrompt.userChoice.finally(() => {
+                          window.deferredPrompt = null;
+                          setCanPromptInstall(false);
+                        });
                       }
                     }}
                   >

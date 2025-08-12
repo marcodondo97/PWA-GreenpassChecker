@@ -20,10 +20,17 @@ Local development
 
 Deploy using AWS Amplify Hosting.
 
+<div align="center">
+  <img src="docs/img/amplify-logo.png" alt="AWS Amplify" width="180" />
+  <br/>
+  <sub>Continuous deployment with AWS Amplify Hosting</sub>
+  <br/>
+</div>
+
 Steps (CI/CD with GitHub)
 
 1. Push your code to the `main` branch on GitHub.
-2. Open the AWS Amplify Console: [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
+2. Open the AWS Amplify Console: [AWS Amplify Console](https://aws.amazon.com/amplify/hosting/)
 3. Select “Host web app”, choose “GitHub”, and authorize access.
 4. Pick the repository `PWA-greenpasschecker` and branch `main`.
 5. Build settings: this repo includes `amplify.yml` which uses Node 20 and runs `npm ci` then `npm run build`.
@@ -35,4 +42,12 @@ Recommended settings
 - Add a SPA rewrite rule: redirect all 200s to `/index.html`.
 - Optionally set `NODE_VERSION=20` in Amplify environment variables if you prefer UI config.
 
-Learn more about the service here: [AWS Amplify Hosting](https://aws.amazon.com/amplify/hosting/).
+### Userflow
+
+<div align="center">
+<table>
+  <tr>
+    <td><img src="docs/img/greenpasschecker-usage.gif" alt="Greenpasschecker App Usage Demo" width="200"/></td>
+  </tr>
+</table>
+</div>
