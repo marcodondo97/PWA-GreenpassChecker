@@ -1,6 +1,6 @@
 ### Introduction
 
-Green Pass Checker is a React web application that scans and validates European COVID-19 Green Pass QR codes. It is designed to be fast, mobile-friendly, and easily deployable as a Progressive Web App (PWA).
+Greenpasschecker is a React web application that scans and validates European COVID-19 Green Pass QR codes. It is designed to be fast, mobile-friendly, and easily deployable as a Progressive Web App (PWA).
 
 ### Description
 
@@ -18,16 +18,10 @@ Local development
 
 ### Deploy
 
-Deploy using AWS Amplify Hosting.
-
-<div align="center">
+<div align="left">
   <img src="docs/img/amplify-logo.png" alt="AWS Amplify" width="180" />
-  <br/>
-  <sub>Continuous deployment with AWS Amplify Hosting</sub>
-  <br/>
 </div>
-
-Steps (CI/CD with GitHub)
+Deploy using AWS Amplify Hosting. Steps (CI/CD with GitHub):
 
 1. Push your code to the `main` branch on GitHub.
 2. Open the AWS Amplify Console: [AWS Amplify Console](https://aws.amazon.com/amplify/hosting/)
@@ -37,14 +31,9 @@ Steps (CI/CD with GitHub)
 6. Artifact output directory: `build`.
 7. Start the deploy. After it completes, you will get a public URL.
 
-Recommended settings
-
-- Add a SPA rewrite rule: redirect all 200s to `/index.html`.
-- Optionally set `NODE_VERSION=20` in Amplify environment variables if you prefer UI config.
-
 ### Userflow
 
-<div align="center">
+<div align="left">
 <table>
   <tr>
     <td><img src="docs/img/greenpasschecker-usage.gif" alt="Greenpasschecker App Usage Demo" width="200"/></td>
