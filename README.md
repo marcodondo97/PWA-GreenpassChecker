@@ -21,10 +21,11 @@ Local development
 <div align="left">
   <img src="docs/img/amplify-logo.png" alt="AWS Amplify" width="180" />
 </div>
+<a href="https://aws.amazon.com/amplify/" target="_blank" rel="noopener noreferrer">AWS Amplify</a> is a full-stack development platform for building secure, scalable mobile and web applications. It offers easy backend integration, hosting, and continuous deployment with a modern developer experience. <br/><br/>
 Deploy using AWS Amplify Hosting. Steps (CI/CD with GitHub):
 
 1. Push your code to the `main` branch on GitHub.
-2. Open the AWS Amplify Console: [AWS Amplify Console](https://aws.amazon.com/amplify/hosting/)
+2. Open the AWS Amplify Console
 3. Select “Host web app”, choose “GitHub”, and authorize access.
 4. Pick the repository `PWA-greenpasschecker` and branch `main`.
 5. Build settings: this repo includes `amplify.yml` which uses Node 20 and runs `npm ci` then `npm run build`.
