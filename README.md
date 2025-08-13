@@ -32,7 +32,7 @@ Deploy using AWS Amplify Hosting. Steps (CI/CD with GitHub):
 6. Artifact output directory: `build`.
 7. Start the deploy. After it completes, you will get a public URL.
 
-### Userflow
+### Result
 
 <div align="left">
 <table>
