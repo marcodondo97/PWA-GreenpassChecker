@@ -6,7 +6,7 @@ Greenpasschecker is a React web application that scans and validates European CO
 
 Greenpasschecker is a React 18 application that uses `@zxing/library` for QR code scanning and Bootstrap 5 for the user interface. Built as a Progressive Web App (PWA), it allows users to scan and validate European COVID-19 Green Pass QR codes with a responsive, mobile-friendly design. The application features modular components including `QRScanner` and `ResultDisplay` for an intuitive user experience.
 
-### Getting start 
+### Getting Started
 
 1. Install dependencies: `npm install`
 2. Start the dev server: `npm start` (opens at http://localhost:3000)
